@@ -1,0 +1,58 @@
+# SAMPLE-PROGRAM
+def display_var1():
+    global ws_var1
+    print(ws_var1)
+    ws_var2[0] += 1
+
+if __name__ == "__main__":
+    ws_var1 = "Hello, world!"
+    ws_var2 = [0]  
+    while ws_var2[0] != 0:
+        display_var1()
+
+# HELLO
+ws_num1 = 25
+ws_num2 = 15
+if ws_num1 > ws_num2:
+    print('WS-NUM1 is greater than WS-NUM2')
+else:
+    print('WS-NUM1 is less than or equal to WS-NUM2')
+
+# HELLO2
+ws_num1 = 25
+ws_num2 = 15
+ws_num3 = 30
+if ws_num1 > ws_num2:
+    if ws_num1 > ws_num3:
+        print('WS-NUM1 is the greatest')
+    else:
+        print('WS-NUM3 is the greatest')
+else:
+    if ws_num2 > ws_num3:
+        print('WS-NUM2 is the greatest')
+    else:
+        print('WS-NUM3 is the greatest')
+
+# HELLO3
+ws_num1 = 25
+ws_num2 = 15
+ws_num3 = 30
+if ws_num1 > ws_num2:
+    if ws_num1 > ws_num3:
+        print('WS-NUM1 is the greatest')
+    else:
+        print('WS-NUM3 is the greatest')
+elif ws_num2 > ws_num3:
+    print('WS-NUM2 is the greatest')
+else:
+    print('WS-NUM3 is the greatest')
+
+# HELLO4
+ws_num1 = 25
+ws_num2 = 15
+if ws_num1 > ws_num2:
+    print('WS-NUM1 is greater than WS-NUM2')
+    ws_num1 += 1
+else:
+    print('WS-NUM1 is less than or equal to WS-NUM2')
+    ws_num2 -= 1

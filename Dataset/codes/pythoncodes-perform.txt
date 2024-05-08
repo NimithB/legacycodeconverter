@@ -1,0 +1,49 @@
+# HELLO
+def a_para():
+    print('IN A-PARA')
+def b_para():
+    print('IN B-PARA')
+def c_para():
+    print('IN C-PARA')
+def d_para():
+    print('IN D-PARA')
+def e_para():
+    print('IN E-PARA')
+if __name__ == "__main__":
+    a_para()
+    for _ in range(3):
+        c_para()
+        d_para()
+        e_para()
+    b_para()
+
+# HELLO2
+ws_cnt = 0
+def a_para():
+    global ws_cnt
+    ws_cnt = 0
+    while ws_cnt <= 3:
+        b_para()
+        ws_cnt += 1
+def b_para():
+    global ws_cnt
+    print('WS-CNT :', ws_cnt)
+    ws_cnt += 1
+
+# HELLO3
+def a_para():
+    for _ in range(3):
+        b_para()
+def b_para():
+    print('IN B-PARA')
+
+# HELLO4
+ws_a = 0
+def a_para():
+    global ws_a
+    while ws_a != 5:
+        b_para()
+def b_para():
+    global ws_a
+    ws_a += 1
+    print('IN B-PARA', ws_a)

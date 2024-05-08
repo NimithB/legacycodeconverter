@@ -1,0 +1,37 @@
+# HELLO
+ws_num1 = 25
+ws_num2 = 15
+if ws_num1 > ws_num2:
+    print('WS-NUM1 is greater than WS-NUM2')
+else:
+    print('WS-NUM1 is not greater than WS-NUM2')
+
+# HELLO2
+ws_num1 = 25
+ws_num2 = 15
+ws_diff = ws_num1 - ws_num2
+if ws_diff > 0:
+    print('WS-NUM1 is greater than WS-NUM2')
+elif ws_diff < 0:
+    print('WS-NUM1 is not greater than WS-NUM2')
+
+# HELLO3
+ws_num1 = 25
+ws_num2 = 15
+ws_num3 = 30
+if ws_num1 > ws_num2:
+    print('WS-NUM1 is greater than WS-NUM2')
+elif ws_num1 > ws_num3:
+    print('WS-NUM1 is greater than WS-NUM3')
+else:
+    print('WS-NUM1 is not greater than WS-NUM2 or WS-NUM3')
+
+# HELLO4
+ws_counter = 1
+while ws_counter <= 10:
+    ws_num = int(input('Enter a number: '))
+    if ws_num > 50:
+        print('The number is greater than 50')
+    else:
+        print('The number is not greater than 50')
+    ws_counter += 1

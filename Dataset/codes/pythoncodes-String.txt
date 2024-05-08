@@ -1,0 +1,34 @@
+Concatenating two strings:
+
+	string1 = "Hello"
+	string2 = "World"
+	result = string1 + string2
+	print("Concatenated String:", result)
+
+
+Appending a string multiple times:
+
+	string1 = "AB"
+	result = string1 * 2
+	print("Repeated String:", result)
+
+
+Extracting parts of a string:
+
+	string1 = "ABCDEFG"
+	result = string1[0:3] + string1[3:6]
+	print("Extracted String:", result)
+
+
+Searching and replacing within a string:
+
+	string1 = "COBOL is COOL"
+	result = string1.replace("COOL", "C++")
+	print("Replaced String:", result)
+
+
+Reversing a string:
+
+	string1 = "REVERSE"
+	result = string1[::-1]
+	print("Reversed String:", result)
