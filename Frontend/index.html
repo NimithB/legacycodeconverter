@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Code Converter</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-image: url('https://wallpapercave.com/wp/wp3291224.jpg'); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        background-color: rgba(10, 12, 10, 0.8);
+        color: white;
+        padding: 20px;
+        margin: 0;
+    }
+    .options {
+        margin: 60px 20px 20px;
+    }
+    .option-button {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgba(10, 14, 10, 0.8);
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .option-button.clicked {
+        background-color: rgba(76, 175, 80, 0.8);
+    }
+    /* Style the dropdown button */
+.dropbtn {
+background-color: #3498db;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+    .container {
+        margin: 100px auto 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 80%;
+        box-sizing: border-box;
+    }
+    .box {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+        text-align: left;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .box select, .box textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+    .run-button {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgba(76, 175, 80, 0.8);
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    footer {
+        background-color: rgba(10, 12, 10, 0.8);
+        color: white;
+        padding: 20px;
+        width: 100%;
+    }
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .container {
+        padding-top: 80px; /* Adjust to accommodate the header */
+        padding-bottom: 80px; /* Adjust to accommodate the footer */
+    }
+</style>
+<body>
+    <h1>SMART SPARK</h1>
+    <div class="container" id="container">
+        <div class="box">
+    <form action="/convert" method="post">
+        <label for="legacy_language">Select Legacy Language:</label>
+        <select id="legacy_language" name="legacy_language">
+            <option value="cobol">COBOL</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="c">C</option>
+            <option value="csharp">C#</option>
+        </select>
+        <br>
+        <label for="legacy_code">Legacy Code:</label>
+        <textarea id="legacy_code" name="legacy_code" rows="10" cols="50"></textarea>
+    </div>
+        
+        <div class="box">
+        <label for="new_language">Select New Language:</label>
+        <select id="new_language" name="new_language">
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="c">C</option>
+            <option value="csharp">C#</option>
+        </select>
+        <label for="new_code">New Code:</label>
+    <textarea id="new_code" name="new_code" rows="10" cols="50" readonly></textarea>
+        </div>
+        <input type="submit" class="run-button" value="Convert">
+    </form>
+    <br>
+    
+</div>
+<footer>
+    <a href="https://www.linkedin.com/in/nimith-b-222917291/">
+        <img src="https://th.bing.com/th/id/OIP.9dMc_xuf6b1efvd5G4wBSQAAAA?w=199&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="LinkedIn Logo" style="width: 50px; height: 40px; margin-right: 10px;">
+    </a>
+    <a href="https://github.com/NimithB">
+        <img src="https://th.bing.com/th?id=OIP.8SVgggxQcO5L6Dw_61ac4QHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"alt="LinkedIn Logo" style="width: 60px; height: 40px; margin-right: 10px;">
+    </a>
+    
+</footer>
+    <script>
+        // Function to submit form via AJAX
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', form.action, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('new_code').value = xhr.responseText;
+                } else {
+                    alert('Error: ' + xhr.responseText);
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
