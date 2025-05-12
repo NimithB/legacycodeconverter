@@ -22,12 +22,6 @@ To use the COBOL to Python Translator, follow these steps:
 4. Call the translation function with your COBOL code as input.
 5. Retrieve the translated Python code and use it as needed.
 
-## Video Explanation
-
-## Video Explanation
-
- https://drive.google.com/file/d/1kbbo7aibw7rrCj5URzM2-rfmJgG7AV4X/view?usp=drive_link
-
 
 
 ## Contributing
